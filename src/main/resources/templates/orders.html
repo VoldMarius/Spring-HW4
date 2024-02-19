@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Freelancing</title>
+</head>
+<body>
+<h1>Orders</h1>
+<h2>View orders</h2>
+<table>
+  <tr>
+    <th>ORDER NAME</th>
+    <th>ORDER STATUS</th>
+  </tr>
+  <tr th:each="p: ${orders}" >
+    <td th:text="${p.name}"></td>
+    <td th:text="${p.status}"></td>
+  </tr>
+</table>
+<h2>addOrder</h2>
+<form action="/orders" method="post">
+  name: <input type="text" name="name"><br />
+  status: <input type="text" step="any" name="status"><br />
+  <button type="submit">add Order</button>
+</form>
+</body>
+</html>
